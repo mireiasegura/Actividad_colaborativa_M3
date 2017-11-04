@@ -6,11 +6,11 @@ getwd()
 #Creamos directorio para los datos
 if(!file.exists("../datos")) {dir.create("../datos")}
 #Descargamos dataset
-library(knitr)
-library("knitr", lib.loc="~/R/win-library/3.4")
 download.file(fileURL,destfile="../datos/Sacramentocrime.csv",method="auto")
 fechaDescarga <- date()
 fechaDescarga
+library(knitr)
+library("knitr", lib.loc="~/R/win-library/3.4")
 sacramentoCrime <- read.table("../datos/Sacramentocrime.csv", row.names=NULL, sep=";", header=TRUE)
 kable(head(sacramentoCrime[,1:5]))
 #Leemos el fichero de la siguiente manera con tal de poder verlo agrupado en columnas
